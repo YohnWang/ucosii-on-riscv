@@ -5,7 +5,6 @@
 #include<cpu.h>
 
 
-volatile uint64_t mstatus_save; 
 
 #define STK_LEN (2048)
 

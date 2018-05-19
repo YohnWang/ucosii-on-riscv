@@ -46,8 +46,6 @@ void init(void)
 	extern int main(int,char*[]);
 	init_sbss();
 	init_bss();
-	//extern void init_heap(void);
-	//init_heap();
 	char *argv[]={"ucosii",NULL};
 	exit(main(1,argv));
 }

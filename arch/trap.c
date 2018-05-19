@@ -12,14 +12,12 @@ void syscall_handler(xlen_t sp[])
 
 void time_handler(xlen_t sp[])
 {
-	extern void _inc_tick_trap(void);
 	extern void next_timecmp(void);
 	extern void task_switch(xlen_t sp[]);
-	//printf("time tick\n");
 	next_timecmp();
 	OSIntEnter();
 	OSTimeTick();
-	OSIntExit();
+	OSIntExit(); //change OSIntExit , now it must be used with task_switch()
 	task_switch(sp);
 }
 

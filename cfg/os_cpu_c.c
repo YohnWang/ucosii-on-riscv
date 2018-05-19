@@ -12,8 +12,8 @@ OS_STK *OSTaskStkInit (void (*task)(void *pd), void *pdata, OS_STK *ptos, INT16U
 
     stk = ptos-32;  
     extern void halt(void);
-	stk[0]=(OS_STK)halt; //ra
-	stk[1]=0x80;//mstatus.set 0x80 , not used
+	stk[0]=(OS_STK)halt; //ra,meaningless ,task shuldn't exit.
+	stk[1]=0x80;//mstatus.set 0x80 ,global interrupt will be set when task begin.
 	stk[2]=0;//unused
 	stk[3]=0;//unused
 	stk[4]=0;
