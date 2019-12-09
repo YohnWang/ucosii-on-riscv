@@ -40,3 +40,5 @@ In `time_handler`,it will replace `OSTickISR` .
 And in `OSIntExit` ,`OSIntCtxSw`is removed,but in `time_handler`,`task_switch` will do its work.
 
 If task give up processor,`scall`should be call,then `syscall_handler`  will finish task switch.(This work was originally completed by the macro `OS_TASK_SW`)
+
+666
